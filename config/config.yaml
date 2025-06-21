@@ -1,0 +1,12 @@
+rds:
+  username: usr
+  password: pass
+  host: host
+  dbname: db
+
+
+redshift:
+  username: ur
+  password: pass
+  host: host
+  port: 5439
