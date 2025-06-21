@@ -33,7 +33,7 @@ redshift_con.get_dataframe("select lead_id from db.table limit 5", "schema")
 ```
 
 ### Use S3
-'''python
+```python
 import pickle
 from src.database.config_s3 import S3
 
@@ -45,20 +45,20 @@ sclr = pickle.loads(s3.get_data(key=prefix))
 destination_path = 'dheerajks/end_to_end_ml/model/standard_scaler.pkl'
 scaler_bytes = pickle.dumps(sclr)
 s3.upload_data(scaler_bytes, destination_path)
-'''
+```
 
 ### Logistic Regression
-'''python
+```python
 from src.models.logistic_regression import CustomLogisticRegression
 lr = CustomLogisticRegression()
 lr.get_data()
 lr.train()
-'''
+```
 
 ### XGBoost
-'''python
+```python
 from src.models.logistic_regression import CustomXGBoost
 model = CustomXGBoost()
 model.get_data()
 model.train()
-'''
+```
