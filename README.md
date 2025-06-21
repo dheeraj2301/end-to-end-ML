@@ -15,7 +15,7 @@ config = ConfigurationManager()
 rds_config = config.get_rds_config()
 rds_con = RDSConnector(rds_config)
 rds_con.get_tables('decision')
-rds_con.get_dataframe("select id from decision.loan limit 5")
+rds_con.get_dataframe("select id from loan limit 5")
 ```
 
 ### To connect to Redshift
@@ -28,8 +28,8 @@ config = ConfigurationManager()
 redshift_config = config.get_redshift_config()
 redshift_con = RedshiftConnector(redshift_config)
 redshift_con.get_databases()
-redshift_con.get_tables('analytics.adf0275')
-redshift_con.get_dataframe("select lead_id from adf0275.poold_analysis_20240628 limit 5", "analytics")
+redshift_con.get_tables('db.table')
+redshift_con.get_dataframe("select lead_id from db.table limit 5", "schema")
 ```
 
 ### Use S3
